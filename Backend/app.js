@@ -18,7 +18,9 @@ mongoose
     console.log("mongoDB connecting!!");
   })
   .then(() => {
-    app.listen(port);
+    app.listen(process.env.PORT || port, () => {
+      console.log("서버 연결 성공..!");
+    });
   })
   .catch((err) => {
     console.log(err);
